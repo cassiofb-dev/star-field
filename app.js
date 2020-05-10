@@ -1,5 +1,6 @@
 let width = screen.width, height = screen.height;
-let stars = [], stars_number = width * 2, speed = 1, angle = 0, angle_speed = 0;
+let stars = [], speed = 1, angle = 0, angle_speed = 0;
+let stars_number = (width > height) ? width * 2 : height * 2;
 
 function Star(){
 		this.x = random(-width, width);
@@ -23,7 +24,7 @@ function Star(){
 		let sx = map(this.x / this.z, 0, 1, 0, width);
 		let sy = map(this.y / this.z, 0, 1, 0, height);
 
-		let r = map(this.z, 0, width, 20, 0);
+		let r = map(this.z, 0, width, 13, 0);
 		ellipse(sx, sy, r, r);
 	}
 }
